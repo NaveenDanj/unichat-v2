@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setRoute } from '../store/app/RouteSlice'
 import type { RootState } from '../store/store'
 import { useEffect } from 'react';
+import FavouriteSection from '../components/favourite/FavouriteSection';
 
 
 
@@ -31,7 +32,7 @@ function AppLayout() {
             <div className="w-[350px] bg-[#1A2236]" style={{ borderRight : '1px solid rgba(255,255,255,0.1)' }}>
                 { route === 'chat' && (<ChatSection />) }
                 { route === 'contact' && (<FriendsSection />) }
-                { route === 'starred' && (<ChatSection />) }
+                { route === 'favourite' && (<FavouriteSection />) }
                 { route === 'archived' && (<ArchiveSection />) }
             </div>
 

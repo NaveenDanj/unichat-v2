@@ -72,7 +72,7 @@ function SidebarLeft() {
                     </div>
                 </div>
 
-                <div onClick={() => handleRouteChange('starred')} className='flex justify-center mt-4'>
+                <div onClick={() => handleRouteChange('favourite')} className='flex justify-center mt-4'>
                     <div className="flex justify-center w-[60px] cursor-pointer rounded-md hover:bg-[#0A80FF] h-[48px] items-center">
                         <StarBorderIcon style={{ width: 20 }} />
                     </div>

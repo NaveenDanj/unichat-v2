@@ -7,9 +7,8 @@ import ResetPasswordForm from "./pages/auth/reset-password/ResetPasswordForm";
 import MobileLayout from "./layouts/MobileLayout";
 
 
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setCurrentDevice } from './store/app/DeviceSlice'
-import type { RootState } from './store/store'
 import { useEffect } from 'react';
 
 
@@ -45,11 +44,8 @@ function App() {
       <BrowserRouter>
         <Routes>
 
-          <Route path="/" element={ isMobile() == false ? <AppLayout /> : <MobileLayout /> }>
+          <Route path="/" element={ isMobile() == false ? (<AppLayout />) : (<MobileLayout />) }>
           </Route>
-
-          {/* <Route path="/mb" element={<MobileLayout />} >
-          </Route> */}
 
           <Route path="/auth" element={<AuthLayout />}>
             <Route path="login" element={<Login />} />

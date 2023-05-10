@@ -6,7 +6,7 @@ export interface RouteState {
 }
 
 const initialState: RouteState = {
-    currentRoute: 'chat',
+    currentRoute: 'chat'
 }
 
 export const routeSlice = createSlice({
