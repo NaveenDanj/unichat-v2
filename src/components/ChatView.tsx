@@ -5,6 +5,7 @@ import ChatHeader from "./layout/ChatHeader"
 import SendIcon from '@mui/icons-material/Send';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import ChatItemMe from './chat-area/ChatItemMe';
+import ChatItemOther from './chat-area/ChatItemOther';
 
 const darkTheme = createTheme({
     palette: {
@@ -20,6 +21,10 @@ function ChatView() {
 
         <div className="h-[100vh] flex-grow flex-col overflow-y-auto p-2">
             <ChatItemMe />
+            <ChatItemMe />
+            <ChatItemOther />
+            <ChatItemMe />
+            <ChatItemOther />
             <ChatItemMe />
         </div>
 

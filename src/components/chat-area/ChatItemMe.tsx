@@ -2,13 +2,13 @@ import Avatar from '@mui/material/Avatar';
 
 function ChatItemMe() {
   return (
-    <div className='w-full p-2 flex flex-col'>
+    <div className='w-full p-2 flex flex-col mt-5'>
 
         <div className='flex my-auto justify-end'>
             <Avatar>N</Avatar>
             <div className='ml-3 flex flex-col'>
                 <label className='font-medium'>You</label>
-                <label className='text-sm text-slate-500'>01:20 PM</label>
+                <label className='text-xs text-slate-500'>01:20 PM</label>
             </div>
         </div>
 
