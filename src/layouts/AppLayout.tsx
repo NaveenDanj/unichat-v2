@@ -6,30 +6,45 @@ import SidebarLeft from '../components/layout/SidebarLeft';
 import SidebarRight from '../components/layout/SidebarRight';
 
 
+import { useSelector, useDispatch } from 'react-redux'
+import { setRoute } from '../store/app/RouteSlice'
+import type { RootState } from '../store/store'
+import { useEffect } from 'react';
+
+
+
 function AppLayout() {
-  return (
-    <div className="flex h-[100vh] bg-[#1A2236] w-full">
-        
-        <div className="flex h-[100vh]  flex-col w-24 bg-[#1A2236]" style={{ borderRight : '1px solid rgba(255,255,255,0.1)' }}>
-            <SidebarLeft />
-        </div>
 
-        <div className="w-[350px] bg-[#1A2236]" style={{ borderRight : '1px solid rgba(255,255,255,0.1)' }}>
-            {/* <ChatSection /> */}
-            {/* <FriendsSection /> */}
-            <ArchiveSection />
-        </div>
+    const route = useSelector((state: RootState) => state.router.currentRoute) 
 
-        <div className='flex flex-grow'>
-            <ChatView />
-        </div>
+    useEffect(() => {
+        console.log(route)
+    } , [route])
 
-        <div className='w-[350px]' style={{ borderLeft : '1px solid rgba(255,255,255,0.1)' }}>
-            <SidebarRight />
-        </div>
+    return (
+        <div className="flex h-[100vh] bg-[#1A2236] w-full">
+            
+            <div className="flex h-[100vh]  flex-col w-24 bg-[#1A2236]" style={{ borderRight : '1px solid rgba(255,255,255,0.1)' }}>
+                <SidebarLeft />
+            </div>
 
-    </div>
-  )
+            <div className="w-[350px] bg-[#1A2236]" style={{ borderRight : '1px solid rgba(255,255,255,0.1)' }}>
+                { route === 'chat' && (<ChatSection />) }
+                { route === 'contact' && (<FriendsSection />) }
+                { route === 'starred' && (<ChatSection />) }
+                { route === 'archived' && (<ArchiveSection />) }
+            </div>
+
+            <div className='flex flex-grow'>
+                <ChatView />
+            </div>
+
+            <div className='w-[350px]' style={{ borderLeft : '1px solid rgba(255,255,255,0.1)' }}>
+                <SidebarRight />
+            </div>
+
+        </div>
+    )
 }
 
 export default AppLayout

@@ -14,8 +14,8 @@ export const routeSlice = createSlice({
     initialState,
     reducers: {
 
-        setRoute: (state , payload:any) => {
-            state.currentRoute = payload
+        setRoute: (state , action: PayloadAction<string>) => {
+            state.currentRoute = action.payload
         },
     },
 
