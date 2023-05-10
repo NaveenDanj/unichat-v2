@@ -49,7 +49,7 @@ function Login() {
             <center>Don't have an account?</center>
         </div>
 
-        <button className='mt-4 mb-8 bg-white h-[34px] flex items-center justify-center w-full text-black'>Sign in</button>
+        <button className='mt-4 mb-8 bg-white h-[34px] flex items-center justify-center w-full text-black'>Sign up</button>
 
 
     </div>
