@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import routerReducer from './app/RouteSlice'
+import deviceReducer from './app/DeviceSlice'
 
 export const store = configureStore({
   reducer: {
-    router : routerReducer
+    router : routerReducer,
+    device : deviceReducer
   },
 })
 

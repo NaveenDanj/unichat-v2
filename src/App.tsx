@@ -7,18 +7,49 @@ import ResetPasswordForm from "./pages/auth/reset-password/ResetPasswordForm";
 import MobileLayout from "./layouts/MobileLayout";
 
 
+import { useSelector, useDispatch } from 'react-redux'
+import { setCurrentDevice } from './store/app/DeviceSlice'
+import type { RootState } from './store/store'
+import { useEffect } from 'react';
+
+
 function App() {
+
+  const dispatch = useDispatch()
+
+  const isMobile = () => {
+    if (navigator.userAgent.match(/Android/i)
+      || navigator.userAgent.match(/webOS/i)
+      || navigator.userAgent.match(/iPhone/i)
+      || navigator.userAgent.match(/iPad/i)
+      || navigator.userAgent.match(/iPod/i)
+      || navigator.userAgent.match(/BlackBerry/i)
+      || navigator.userAgent.match(/Windows Phone/i)) {
+      return true ;
+    } else {
+      return false ;
+    }
+  }
+
+  useEffect(() => {
+    console.log(isMobile());
+    if(isMobile()){
+      dispatch(setCurrentDevice('mobile'));
+    }else{
+      dispatch(setCurrentDevice('web'));
+    }
+  } , []);
 
   return (
     <>
       <BrowserRouter>
         <Routes>
 
-          <Route path="/" element={<AppLayout />}>
+          <Route path="/" element={ isMobile() == false ? <AppLayout /> : <MobileLayout /> }>
           </Route>
 
-          <Route path="/mb" element={<MobileLayout />} >
-          </Route>
+          {/* <Route path="/mb" element={<MobileLayout />} >
+          </Route> */}
 
           <Route path="/auth" element={<AuthLayout />}>
             <Route path="login" element={<Login />} />
