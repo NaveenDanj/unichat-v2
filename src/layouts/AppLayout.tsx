@@ -22,9 +22,9 @@ function AppLayout() {
             <ChatView />
         </div>
 
-        {/* <div className='w-[350px]' style={{ borderLeft : '1px solid rgba(255,255,255,0.1)' }}>
+        <div className='w-[350px]' style={{ borderLeft : '1px solid rgba(255,255,255,0.1)' }}>
             <SidebarRight />
-        </div> */}
+        </div>
 
     </div>
   )
