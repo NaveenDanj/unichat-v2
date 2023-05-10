@@ -45,6 +45,17 @@ function FriendsSection() {
             <FriendItem />
             <FriendItem />
             <FriendItem />
+            <FriendItem />
+            <FriendItem />
+            <FriendItem />
+            <FriendItem />
+            <FriendItem />
+            <FriendItem />
+            <FriendItem />
+            <FriendItem />
+            <FriendItem />
+            <FriendItem />
+            <FriendItem />
         </div>
 
     </div>

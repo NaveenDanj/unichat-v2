@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import ChatHeader from "./layout/ChatHeader"
 import SendIcon from '@mui/icons-material/Send';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
+import ChatItemMe from './chat-area/ChatItemMe';
 
 const darkTheme = createTheme({
     palette: {
@@ -17,8 +18,9 @@ function ChatView() {
     <div className="flex flex-col w-full">
         <ChatHeader />
 
-        <div className="h-[100vh] flex-grow overflow-y-auto ">
-
+        <div className="h-[100vh] flex-grow flex-col overflow-y-auto p-2">
+            <ChatItemMe />
+            <ChatItemMe />
         </div>
 
         <div className="flex justify-between h-[118px] p-4 w-full" style={{ borderTop : '1px solid rgba(255,255,255,0.1)' }}>

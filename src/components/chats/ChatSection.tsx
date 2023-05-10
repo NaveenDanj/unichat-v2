@@ -49,6 +49,12 @@ function ChatSection() {
             <ChatItem />
             <ChatItem />
             <ChatItem />
+            <ChatItem />
+            <ChatItem />
+            <ChatItem />
+            <ChatItem />
+            <ChatItem />
+            <ChatItem />
         </div>
 
     </div>
