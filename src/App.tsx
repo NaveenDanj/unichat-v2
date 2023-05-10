@@ -4,6 +4,7 @@ import AuthLayout from "./layouts/AuthLayout";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import ResetPasswordForm from "./pages/auth/reset-password/ResetPasswordForm";
+import MobileLayout from "./layouts/MobileLayout";
 
 
 function App() {
@@ -12,7 +13,11 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
+
           <Route path="/" element={<AppLayout />}>
+          </Route>
+
+          <Route path="/mb" element={<MobileLayout />} >
           </Route>
 
           <Route path="/auth" element={<AuthLayout />}>

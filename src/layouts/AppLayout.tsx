@@ -1,4 +1,5 @@
 import ChatView from '../components/ChatView';
+import ArchiveSection from '../components/archive/ArchiveSection';
 import ChatSection from '../components/chats/ChatSection';
 import FriendsSection from '../components/friends/FriendsSection';
 import SidebarLeft from '../components/layout/SidebarLeft';
@@ -14,8 +15,9 @@ function AppLayout() {
         </div>
 
         <div className="w-[350px] bg-[#1A2236]" style={{ borderRight : '1px solid rgba(255,255,255,0.1)' }}>
-            <ChatSection />
+            {/* <ChatSection /> */}
             {/* <FriendsSection /> */}
+            <ArchiveSection />
         </div>
 
         <div className='flex flex-grow'>
