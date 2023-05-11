@@ -4,6 +4,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import ChatItem from './ChatItem';
+import AddContactDialog from '../dialogs/AddContact';
 
 const darkTheme = createTheme({
     palette: {
@@ -26,9 +27,12 @@ function ChatSection() {
                         <SupervisorAccountIcon style={{ width: 20 }} />
                     </div>
 
-                    <div style={{ border : '1px solid rgba(255,255,255,0.1)' }} className="my-auto ml-4 mt-1  flex justify-center w-[46px] cursor-pointer rounded-md  hover:bg-slate-700 h-[36px] items-center">
+                    {/* <div style={{ border : '1px solid rgba(255,255,255,0.1)' }} className="my-auto ml-4 mt-1  flex justify-center w-[46px] cursor-pointer rounded-md  hover:bg-slate-700 h-[36px] items-center">
                         <AddCircleOutlineIcon style={{ width: 20 }} />
-                    </div>
+                    </div> */}
+
+                    <AddContactDialog />
+
                 </div>
 
             </div>
