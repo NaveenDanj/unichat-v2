@@ -12,6 +12,13 @@ import Switch from '@mui/material/Switch';
 
 import React from 'react';
 
+import { useSelector, useDispatch } from 'react-redux'
+import { setSidebarOpen  } from '../../store/app/RouteSlice'
+import type { RootState } from '../../store/store'
+
+
+
+
 
 const darkTheme = createTheme({
     palette: {
@@ -22,8 +29,10 @@ const darkTheme = createTheme({
 
 
 function SidebarRight() {
-
+    const dispatch = useDispatch();
     const [value, setValue] = React.useState('1');
+    const sidebarOpen = useSelector((state: RootState) => state.router.sidebarOpen) 
+
 
     const handleChange = (_event: React.SyntheticEvent, newValue: string) => {
         setValue(newValue);
@@ -35,7 +44,7 @@ function SidebarRight() {
             <div className="pt-5 px-8 flex justify-between w-full">
                 <h2 className=" font-medium my-auto text-2xl">Profile</h2>
                 <div className='flex'>
-                    <div style={{ border : '1px solid rgba(255,255,255,0.1)' }} className="my-auto ml-4 mt-1 flex justify-center w-[46px] cursor-pointer rounded-md  hover:bg-slate-700 h-[36px] items-center">
+                    <div onClick={() => dispatch(setSidebarOpen(false))} style={{ border : '1px solid rgba(255,255,255,0.1)' }} className="my-auto ml-4 mt-1 flex justify-center w-[46px] cursor-pointer rounded-md  hover:bg-slate-700 h-[36px] items-center">
                         <CloseIcon style={{ width: 20 }} />
                     </div>
                 </div>

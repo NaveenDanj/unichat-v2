@@ -16,7 +16,7 @@ function Register() {
         </center>
 
         <TextField size="small" placeholder='Full name' fullWidth className=' text-white' id="outlined-basic" variant="outlined" /><br /><br/>
-        <TextField size="small" placeholder='Email' fullWidth className=' text-white' id="outlined-basic" variant="outlined" /><br /><br/>
+        <TextField size="small" type='email' placeholder='Email' fullWidth className=' text-white' id="outlined-basic" variant="outlined" /><br /><br/>
         <TextField size="small" placeholder='Phone' fullWidth className=' text-white' id="outlined-basic" variant="outlined" /><br /><br/>
         <TextField size="small" type='password' placeholder='Password' fullWidth className=' text-white' id="outlined-basic" variant="outlined" />
 

@@ -2,11 +2,13 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 export interface RouteState {
-    currentRoute: string
+    currentRoute: string,
+    sidebarOpen : boolean
 }
 
 const initialState: RouteState = {
-    currentRoute: 'chat'
+    currentRoute: 'chat',
+    sidebarOpen : false
 }
 
 export const routeSlice = createSlice({
@@ -17,9 +19,14 @@ export const routeSlice = createSlice({
         setRoute: (state , action: PayloadAction<string>) => {
             state.currentRoute = action.payload
         },
+
+        setSidebarOpen : (state , action: PayloadAction<boolean>) => {
+            state.sidebarOpen = action.payload
+        }
+
     },
 
 })
 
-export const { setRoute } = routeSlice.actions
+export const { setRoute , setSidebarOpen } = routeSlice.actions
 export default routeSlice.reducer

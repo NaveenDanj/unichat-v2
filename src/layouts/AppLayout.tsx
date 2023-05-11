@@ -17,6 +17,7 @@ import FavouriteSection from '../components/favourite/FavouriteSection';
 function AppLayout() {
 
     const route = useSelector((state: RootState) => state.router.currentRoute) 
+    const sidebarOpen = useSelector((state: RootState) => state.router.sidebarOpen) 
 
     useEffect(() => {
         console.log(route)
@@ -40,9 +41,11 @@ function AppLayout() {
                 <ChatView />
             </div>
 
-            <div className='w-[350px]' style={{ borderLeft : '1px solid rgba(255,255,255,0.1)' }}>
-                <SidebarRight />
-            </div>
+            {sidebarOpen && (
+                <div className='w-[350px]' style={{ borderLeft : '1px solid rgba(255,255,255,0.1)' }}>
+                    <SidebarRight />
+                </div>
+            )}
 
         </div>
     )

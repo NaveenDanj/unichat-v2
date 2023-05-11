@@ -15,8 +15,8 @@ function Login() {
             <h2 className=" text-xl font-medium mb-10">Sign in</h2>
         </center>
 
-        <TextField size="small" placeholder='Username or email' fullWidth className=' text-white' id="outlined-basic" variant="outlined" /><br /><br/>
-        <TextField size="small" placeholder='Password' fullWidth className=' text-white' id="outlined-basic" variant="outlined" />
+        <TextField size="small" type='email' placeholder='Username or email' fullWidth className=' text-white' id="outlined-basic" variant="outlined" /><br /><br/>
+        <TextField size="small" type='password' placeholder='Password' fullWidth className=' text-white' id="outlined-basic" variant="outlined" />
 
         <div className='flex w-full justify-between mt-4'>
             <FormControlLabel className='my-auto' control={<Checkbox defaultChecked />} label="Remember me" />

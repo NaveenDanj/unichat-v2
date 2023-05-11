@@ -7,7 +7,7 @@ import ArchiveIcon from '@mui/icons-material/Archive';
 
 
 import { useSelector, useDispatch } from 'react-redux'
-import { setRoute } from '../../store/app/RouteSlice'
+import { setRoute , setSidebarOpen } from '../../store/app/RouteSlice'
 import type { RootState } from '../../store/store'
 import { useEffect } from 'react';
 
@@ -97,7 +97,7 @@ function SidebarLeft() {
                 </div>
 
                 <div className='flex justify-center mt-4 '>
-                    <div className="p-3 flex justify-center w-[60px] cursor-pointer rounded-md hover:bg-slate-700 items-center">
+                    <div onClick={() => dispatch(setSidebarOpen(true))} className="p-3 flex justify-center w-[60px] cursor-pointer rounded-md hover:bg-slate-700 items-center">
                         <Avatar>N</Avatar>
                     </div>
                 </div>
