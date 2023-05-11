@@ -34,7 +34,8 @@ function FavouriteMenu() {
                 <Menu
                     PaperProps={{  
                         style: {  
-                          width: 200,  
+                          width: 200,
+                          borderRadius : 5
                         },
                     }}
                     open={open}
