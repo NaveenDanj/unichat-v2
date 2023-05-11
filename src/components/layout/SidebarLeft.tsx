@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setRoute , setSidebarOpen } from '../../store/app/RouteSlice'
 import type { RootState } from '../../store/store'
 import { useEffect } from 'react';
+import MyProfileMenu from '../menus/MyProfileMenu';
 
 
 
@@ -97,9 +98,10 @@ function SidebarLeft() {
                 </div>
 
                 <div className='flex justify-center mt-4 '>
-                    <div onClick={() => dispatch(setSidebarOpen(true))} className="p-3 flex justify-center w-[60px] cursor-pointer rounded-md hover:bg-slate-700 items-center">
+                    {/* <div onClick={() => dispatch(setSidebarOpen(true))} className="p-3 flex justify-center w-[60px] cursor-pointer rounded-md hover:bg-slate-700 items-center">
                         <Avatar>N</Avatar>
-                    </div>
+                    </div> */}
+                    <MyProfileMenu />
                 </div>
 
             </div>
