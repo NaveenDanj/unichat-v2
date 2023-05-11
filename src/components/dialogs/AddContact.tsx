@@ -6,7 +6,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Alert from '@mui/material/Alert';
@@ -55,15 +57,23 @@ export default function AddContactDialog() {
                 aria-describedby="alert-dialog-description"
             >
 
-                <DialogTitle className='bg-[#0A80FF] flex '>
-                    <AddCircleOutlineIcon className='my-auto' style={{ width: 20 }} />
-                    <label className='my-auto ml-2'>Add Friends</label>
+                <DialogTitle className='bg-[#0A80FF] flex justify-between'>
+                    
+                    <div className='flex my-auto'>
+                        <AddCircleOutlineIcon className='my-auto' style={{ width: 20 }} />
+                        <label className='my-auto ml-2'>Add Friends</label>
+                    </div>
+
+                    <IconButton onClick={handleClose} className='my-auto' size="small">
+                        <CloseIcon />
+                    </IconButton>
+
                 </DialogTitle>
 
 
                 <DialogContent>
                     
-                    <Alert className='mt-6 mx-2' severity="success">Send invitations to friends.</Alert>
+                    {/* <Alert className='mt-6 mx-2' severity="success">Send invitations to friends.</Alert> */}
 
                     <DialogContentText className='px-2 pt-6'  id="alert-dialog-description">
                         

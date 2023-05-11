@@ -4,6 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Divider from '@mui/material/Divider';
+import SettingsDialog from '../dialogs/SettingsDialog';
 
 const darkTheme = createTheme({
     palette: {
@@ -53,7 +54,8 @@ function MyProfileMenu() {
                 >
                     <MenuItem onClick={handleClose}>Edit profile</MenuItem>
                     <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>Settings</MenuItem>
+                    {/* <MenuItem onClick={handleClose}>Settings</MenuItem> */}
+                    <SettingsDialog />
                     <Divider />
                     <MenuItem onClick={handleClose}>
                         <label className=' text-pink-600'>Logout</label>
