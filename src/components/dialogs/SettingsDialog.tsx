@@ -5,17 +5,13 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import CloseIcon from '@mui/icons-material/Close';
-import AddIcon from '@mui/icons-material/Add';
 import SettingsIcon from '@mui/icons-material/Settings';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Alert from '@mui/material/Alert';
-import TextField from '@mui/material/TextField';
-import { Divider , FormControlLabel, FormGroup, IconButton, MenuItem, Switch, Tab, Tabs } from '@mui/material';
+import {  FormControlLabel, FormGroup, IconButton, MenuItem, Switch, Tab, Tabs } from '@mui/material';
 import { TabContext, TabPanel } from '@mui/lab';
 
 const darkTheme = createTheme({

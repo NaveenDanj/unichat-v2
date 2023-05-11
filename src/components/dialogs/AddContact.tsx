@@ -83,9 +83,9 @@ export default function AddContactDialog() {
                         
                         <Divider />
                         <div className='mb-5'></div>
-                        <center><label className=' uppercase font-bold'>Or enter the invite code</label></center>
+                        <center><label className='text-sm uppercase font-bold'>Or enter the invite code</label></center>
 
-                        <div className='mb-5'></div>
+                        <div className='mb-10'></div>
 
                         <div className='flex w-full gap-2'>
                             <TextField size="small" type='email' placeholder='Enter the Invite code' fullWidth className='mt-2 text-white' id="outlined-basic" variant="outlined" /><br />
