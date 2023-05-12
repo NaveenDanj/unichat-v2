@@ -4,9 +4,11 @@ import TextField from '@mui/material/TextField';
 import ChatHeader from "./layout/ChatHeader"
 import SendIcon from '@mui/icons-material/Send';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
+import ChatViewGetStarted from './ChatViewGetStarted';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/store';
 import ChatItemMe from './chat-area/ChatItemMe';
 import ChatItemOther from './chat-area/ChatItemOther';
-import ChatViewGetStarted from './ChatViewGetStarted';
 
 const darkTheme = createTheme({
     palette: {
@@ -16,42 +18,51 @@ const darkTheme = createTheme({
   
 
 function ChatView() {
-  return (
-    <div className="flex flex-col w-full ">
-        <ChatHeader />
 
-        <div className="h-[100vh] flex-grow flex-col overflow-y-auto p-2">
-            {/* <ChatItemMe />
-            <ChatItemMe />
-            <ChatItemOther />
-            <ChatItemMe />
-            <ChatItemOther />
-            <ChatItemMe /> */}
-            <ChatViewGetStarted />
-        </div>
+    const chatList = useSelector((state: RootState) => state.currentChat.chatList) 
+    
 
-        <div className="flex justify-between min-h-[118px] p-4 w-full" style={{ borderTop : '1px solid rgba(255,255,255,0.1)' }}>
-            
-            <div className='flex w-[100%]'>
+    return (
+        <div className="flex flex-col w-full ">
+            <ChatHeader />
 
-                <ThemeProvider theme={darkTheme}>
-                    <TextField size="small" placeholder='Write a message' fullWidth className='my-auto  h-24 text-white' id="outlined-basic" variant="outlined" />
-                </ThemeProvider>
+            <div className="h-[100vh] flex-grow flex-col overflow-y-auto p-2">
 
-                <div style={{ border : '1px solid rgba(255,255,255,0.1)' }} className="ml-5 mt-1 flex justify-center w-[46px] cursor-pointer rounded-md hover:bg-slate-700 h-[36px] items-center">
-                    <AttachFileIcon style={{ width: 20 }} />
-                </div>
-
-                <div style={{ border : '1px solid rgba(255,255,255,0.1)' }} className="ml-4 mt-1 mr-5 flex justify-center w-[46px] cursor-pointer rounded-md bg-[#0A80FF] hover:bg-[#0062E1] h-[36px] items-center">
-                    <SendIcon style={{ width: 20 }} />
-                </div>
-
+                {chatList.length == 0 ? <ChatViewGetStarted /> : (
+                    <>
+                    <ChatItemMe />
+                    <ChatItemMe />
+                    <ChatItemOther />
+                    <ChatItemMe />
+                    <ChatItemOther />
+                    <ChatItemMe />
+                    </>
+                )}
+                
             </div>
-        
-        </div>
 
-    </div>
-  )
+            <div className="flex justify-between min-h-[118px] p-4 w-full" style={{ borderTop : '1px solid rgba(255,255,255,0.1)' }}>
+                
+                <div className='flex w-[100%]'>
+
+                    <ThemeProvider theme={darkTheme}>
+                        <TextField size="small" placeholder='Write a message' fullWidth className='my-auto  h-24 text-white' id="outlined-basic" variant="outlined" />
+                    </ThemeProvider>
+
+                    <div style={{ border : '1px solid rgba(255,255,255,0.1)' }} className="ml-5 mt-1 flex justify-center w-[46px] cursor-pointer rounded-md hover:bg-slate-700 h-[36px] items-center">
+                        <AttachFileIcon style={{ width: 20 }} />
+                    </div>
+
+                    <div style={{ border : '1px solid rgba(255,255,255,0.1)' }} className="ml-4 mt-1 mr-5 flex justify-center w-[46px] cursor-pointer rounded-md bg-[#0A80FF] hover:bg-[#0062E1] h-[36px] items-center">
+                        <SendIcon style={{ width: 20 }} />
+                    </div>
+
+                </div>
+            
+            </div>
+
+        </div>
+    )
 }
 
 export default ChatView

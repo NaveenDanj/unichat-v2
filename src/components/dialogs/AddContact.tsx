@@ -71,10 +71,8 @@ export default function AddContactDialog() {
                 </DialogTitle>
 
 
-                <DialogContent>
+                <DialogContent className='bg-[#1A2236]'>
                     
-                    {/* <Alert className='mt-6 mx-2' severity="success">Send invitations to friends.</Alert> */}
-
                     <DialogContentText className='px-2 pt-6'  id="alert-dialog-description">
                         
                         <label className=' text-xs mb-3'>Username or email</label>
@@ -98,7 +96,7 @@ export default function AddContactDialog() {
 
                 </DialogContent>
 
-                <DialogActions className='mr-3'>
+                <DialogActions className='mr-3 bg-[#1A2236]'>
                     
                     <Button onClick={handleClose}>CANCEL</Button>
                     

@@ -7,9 +7,8 @@ import ArchiveIcon from '@mui/icons-material/Archive';
 
 
 import { useSelector, useDispatch } from 'react-redux'
-import { setRoute , setSidebarOpen } from '../../store/app/RouteSlice'
+import { setRoute  } from '../../store/app/RouteSlice'
 import type { RootState } from '../../store/store'
-import { useEffect } from 'react';
 import MyProfileMenu from '../menus/MyProfileMenu';
 
 

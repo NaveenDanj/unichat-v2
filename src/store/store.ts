@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import routerReducer from './app/RouteSlice'
 import deviceReducer from './app/DeviceSlice'
+import currentChatReducer from './app/CurrentChatSlice'
 
 export const store = configureStore({
   reducer: {
     router : routerReducer,
-    device : deviceReducer
+    device : deviceReducer,
+    currentChat : currentChatReducer
   },
 })
 
