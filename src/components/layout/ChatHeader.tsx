@@ -1,5 +1,6 @@
 import Avatar from '@mui/material/Avatar';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import ChatMenu from '../menus/ChatMenu';
 
 function ChatHeader() {
   return (
@@ -14,9 +15,10 @@ function ChatHeader() {
 
         <div className='mr-8 '>
             <div className='flex justify-center mt-4'>
-                <div style={{ border : '1px solid rgba(255,255,255,0.1)' }} className="my-auto flex justify-center w-[46px] cursor-pointer rounded-md hover:bg-slate-700 h-[36px] items-center">
+                {/* <div style={{ border : '1px solid rgba(255,255,255,0.1)' }} className="my-auto flex justify-center w-[46px] cursor-pointer rounded-md hover:bg-slate-700 h-[36px] items-center">
                     <MoreHorizIcon style={{ width: 20 }} />
-                </div>
+                </div> */}
+                <ChatMenu />
             </div>
         </div>
 

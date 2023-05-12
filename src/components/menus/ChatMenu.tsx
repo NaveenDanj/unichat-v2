@@ -4,13 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Divider from '@mui/material/Divider';
-import SettingsDialog from '../dialogs/SettingsDialog';
-import EditeProfileDialog from '../dialogs/EditeProfileDialog';
-
-
-import { useDispatch } from 'react-redux'
-import { setSidebarOpen } from '../../store/app/RouteSlice'
-
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 const darkTheme = createTheme({
     palette: {
@@ -18,8 +12,8 @@ const darkTheme = createTheme({
     },
 });
 
-function MyProfileMenu() {
-    const dispatch = useDispatch(); 
+function ChatMenu() {
+
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
 
@@ -33,8 +27,8 @@ function MyProfileMenu() {
 
     return (
         <>
-            <div onClick={handleClick} className="p-3 flex justify-center w-[60px] cursor-pointer rounded-md hover:bg-slate-700 items-center">
-                <Avatar>N</Avatar>
+            <div onClick={handleClick} style={{ border : '1px solid rgba(255,255,255,0.1)' }} className="my-auto ml-4 mt-1 flex justify-center w-[46px] cursor-pointer rounded-md  hover:bg-slate-700 h-[36px] items-center">
+                <MoreHorizIcon style={{ width: 20 }} />
             </div>
             
             <ThemeProvider theme={darkTheme}>
@@ -49,21 +43,22 @@ function MyProfileMenu() {
                     onClose={handleClose}
                     anchorEl={anchorEl}
                     anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'center',
+                    }}
+                    
+                    transformOrigin={{
                         vertical: 'top',
                         horizontal: 'center',
                     }}
-                    // transformOrigin={{
-                    //     vertical: 'bottom',
-                    //     horizontal: 'left',
-                    // }}
                     
                 >
-                    <EditeProfileDialog />
-                    <MenuItem onClick={() => dispatch(setSidebarOpen(true))}>Profile</MenuItem>
-                    <SettingsDialog />
+                    <MenuItem onClick={handleClose}>Profile</MenuItem>
+                    <MenuItem onClick={handleClose}>Add to archive</MenuItem>
+                    <MenuItem onClick={handleClose}>Delete</MenuItem>
                     <Divider />
                     <MenuItem onClick={handleClose}>
-                        <label className=' text-pink-600'>Logout</label>
+                        <label className=' text-pink-600'>Block</label>
                     </MenuItem>
                 </Menu>
             </ThemeProvider>
@@ -72,4 +67,4 @@ function MyProfileMenu() {
     )
 }
 
-export default MyProfileMenu
+export default ChatMenu
